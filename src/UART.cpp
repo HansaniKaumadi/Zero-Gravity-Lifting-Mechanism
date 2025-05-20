@@ -1,10 +1,9 @@
 #include "UART.h"
 
-UART::UART(uint64_t baudRate) {
+UART::UART() {
     // Set the baud rate
     UBRR0H = 0;
     UBRR0L = 8;
-
 
     // Enable receiver and transmitter
     UCSR0B = (1 << RXEN0) | (1 << TXEN0);
@@ -35,7 +34,7 @@ void UART::transmitString(const char* str) {
 
 void UART::transmitNumber(long number) {
     char buffer[20];
-    snprintf(buffer, sizeof(buffer), "%ld", number);
+    snprintf(buffer, sizeof(buffer), "%ld \n\r", number);
     transmitString(buffer);
 }
 
