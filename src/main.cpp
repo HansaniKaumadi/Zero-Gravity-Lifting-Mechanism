@@ -6,7 +6,7 @@
 #include "motor.h"
 #include "UART.h"
 #include "I2C.h"
-
+#include "hx711.h"
 #include "IO.h"
 #include "io_portk.h"
 #include "timemillis.h"
